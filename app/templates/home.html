@@ -1,0 +1,26 @@
+{% extends "base.html"%}
+{% block content %}
+<div>
+  <div class="jumbotron">
+  <h1 class="display-4">A simple soultion to reach your friends on the web.</h1>
+  <p class="lead"></p>
+  <hr class="my-4">
+  <p>Below try out this simple texting app through the web!</p>
+  <p class="lead">
+
+  </p>
+</div>
+<form action ="{{url_for('message_func')}}">
+  <div class="container">
+    <label for="exampleInputEmail1">Phone number</label>
+    <input type="text" class="form-control" name="phone_num" aria-describedby="emailHelp" placeholder="Phone number">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your Phone number with anyone else.</small>
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1" >Messages</label>
+      <textarea class="form-control" name = 'message_' rows="3" placeholder="Write your message here"></textarea>
+    </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+
+{% endblock %}
