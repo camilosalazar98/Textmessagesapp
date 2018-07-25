@@ -24,7 +24,7 @@ def Addusers():
         new_user = phone_num(name,phone_number)
         db.session.add(name,phone_number1)
         db.session.commit()
-        return redirect(url_for('list_of_users'))
+        return redirect(url_for('list_users'))
 
     return render_template('add.html',form=form)
 
@@ -34,7 +34,7 @@ def list_users():
     users = phone_num.query.all()
     return render_template('list.html',users = phone_num)
 
-@app.route('/delete',medthod = ['GET','POST'])
+@app.route('/delete',methods = ['GET','POST'])
 def del_user():
     form = Delform()
     if form.validate_on_submit():
@@ -46,16 +46,6 @@ def del_user():
 
     return render_template('delete.html',form=form)
 
-
-
-
-
-
-
-
-
-
-
 @app.route('/message_func')
 def message_func():
     #Your Account Sid and Auth Token from twilio.com/console
@@ -66,6 +56,6 @@ def message_func():
     client = Client(account_sid, auth_token)
     message = client.messages.create(
                               body = message_,
-                              from_='',
+                              from_='+13476948587',
                               to='+1'+phone_num)
     return render_template('home.html')

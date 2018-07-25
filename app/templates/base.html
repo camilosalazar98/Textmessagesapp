@@ -10,8 +10,14 @@
   </head>
   <body>
     <div>
-<nav class="navbar navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#">Communiqué</a>
+  <div class = "navbar-nav">
+      <a class="navbar-brand" href="{{url_for('index')}}">Communiqué</a>
+      <a class="navbar-brand" href="{{url_for('Addusers')}}">Add users</a>
+      <a class="navbar-brand" href="{{url_for('del_user')}}">Delete users</a>
+      <a class="navbar-brand" href="{{url_for('list_users')}}">List users</a>
+  <div>
 </nav>
 
 </div>
